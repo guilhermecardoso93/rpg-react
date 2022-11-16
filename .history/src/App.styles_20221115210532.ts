@@ -1,0 +1,16 @@
+import styled , { createGlobalStyle} from 'styled-components'
+
+export const Container = styled.div`
+  background-color: #24282f;
+  min-height: 100vh;
+  color: #fff;
+`
+
+
+export const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+`
