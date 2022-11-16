@@ -33,15 +33,20 @@ export function useCharacter() {
   function moveDown() {
     setPos((pos) => ({
       x: pos.x,
-      y: canMove(pos.x, pos.y + 1) ? pos.y + 1 : pos.y,
+      y: canMove(pos.y + 1, pos.x) ? pos.y + 1 : pos.y,
     }));
     setSide("down");
   }
 
   function canMove(x: number, y: number) {
+    if (x < 0 || y < 0) return false;
+
     if (mapSpots[y] !== undefined && mapSpots[y][x] !== undefined) {
-      return mapSpots[y][x] === 1;
+      if (mapSpots[y][x] === 1) {
+        return true;
+      }
     }
+
     return false;
   }
 
